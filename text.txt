@@ -1,0 +1,52 @@
+    while True:
+         try:
+              ch = int(input("1.ADD\n2.EXIT\nEnter your choice: "))
+         except ValueError:
+              print("\nERROR: CHOOSE ONLY DIGITS FROM THE GIVEN OPTION")
+              exit(1)
+         else:
+              if ch == 1 and s > 0:
+                    pn = input("Enter product name: ")
+                    q = input("Enter quantity: ")
+                    p = float(input("Enter price of the product: "))
+                     
+
+                    if p > s:
+                          print("\nCAN't BUY THE PRODUCT")
+                          continue
+                    elif p > 0 and p <= s:
+                         if pn in na:
+                              ind = na.index(pn)
+                              
+                              #remove quantity from "quant" index of the product.
+
+                              qu[ind] = q
+
+                              #remove price from "price" index of the product
+
+                              pr[ind] = p
+
+                              #subtract the price from the budget and assign.
+                              
+                              s = bg - sum(pr)
+                              print("\nAmouunt left: ",s)
+          
+                         else:
+                              na.append(pn)
+                              qu.append(q)
+                              pr.append(p)
+
+                              s = bg - sum(pr)
+                              print("\nAmount left: ",s)
+               elif s <= 0
+                         print("\nNo budged")
+                    else:
+                         break
+
+
+     print("\nAmount left: RS",s)
+     if s in pr:
+          print("\nAmount left can you a",na[pr.index(s)])
+     print("\n\n\nGROCERY LIST")
+     for i in range(len(na)):
+          print(na[i],qu[i],pr[i])
